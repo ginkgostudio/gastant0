@@ -1,9 +1,17 @@
 import React, {Component} from 'react';
+import M from "materialize-css";
 
 class Expense extends Component{
+   
     componentDidMount() {
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('select');
+            let options = {
+                inDuration: 300,
+                outDuration: 300,
+                hover: true, // Activate on hover
+                coverTrigger: false, // Displays dropdown below the button
+            };
             var instances = M.FormSelect.init(elems, options);
         });
     }
