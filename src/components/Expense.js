@@ -15,6 +15,13 @@ class Expense extends Component{
             }
             var elems1 = document.querySelectorAll('.datepicker');
             var instances = M.Datepicker.init(elems1, options);
+            var options2 = {
+                placeholder: 'Add Tag',
+                secondaryPlaceholder: '+ Tag',
+            }
+            var elems2 = document.querySelectorAll('.chips');
+            var instances = M.Chips.init(elems2, options2);
+            
         });
     }
     render(){
@@ -33,6 +40,11 @@ class Expense extends Component{
                             <div className="input-field col s6">
                                 <input id="concepto" type="text" className="validate" />
                                 <label for="concepto">Concepto</label>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col s6">
+                                <div className="chips chips-placeholder"></div>
                             </div>
                         </div>
                         <div className="row">
