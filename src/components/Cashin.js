@@ -1,37 +1,6 @@
 import React, {Component} from 'react';
-import M from "materialize-css";
 
 class Cashin extends Component{
-    componentDidMount(){
-        document.addEventListener('DOMContentLoaded', function() {
-
-            var cashin_invoice = document.querySelectorAll('.cashin_invoice');
-            var cashin_invoice_instance = M.FormSelect.init(cashin_invoice);
-
-            var cashin_currency = document.querySelectorAll('.cashin-currency');
-            var cashin_currency_instance = M.FormSelect.init(cashin_currency);
-
-            var cashin_destination = document.querySelectorAll('.cashin-destination');
-            var cashin_destination_instance = M.FormSelect.init(cashin_destination);
-
-            var cashin_datepicker_options = {
-                autoClose: true,
-                defaultDate: new Date(),
-                setDefaultDate: true
-
-            }
-            var cashin_datepicker = document.querySelectorAll('.datepicker');
-            var cashin_datepicker_instance = M.Datepicker.init(cashin_datepicker, cashin_datepicker_options);
-            
-            var cashin_chips_options = {
-                placeholder: 'Add Tag',
-                secondaryPlaceholder: '+ Tag',
-            }
-            var cashin_chips = document.querySelectorAll('.chips');
-            var cashin_chips_instances = M.Chips.init(cashin_chips, cashin_chips_options);
-            
-        });
-    }
     render(){
         return (
 

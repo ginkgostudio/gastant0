@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/layout/Navbar';
 import Expense from './components/Expense';
 import Cashin from './components/Cashin';
-import 'materialize-css/dist/css/materialize.min.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 function App(){
