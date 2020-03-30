@@ -15,8 +15,6 @@ export default function Amount() {
   const classes = useStyles();
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
       <TextField id="standard-basic" label="Amount" type="number" />
-    </form>
   );
 }
