@@ -1,30 +1,12 @@
 import React from 'react';
-import { Link, NavLink, withRouter } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import Paper from '@material-ui/core/Paper';
-import Fab from '@material-ui/core/Fab';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import Avatar from '@material-ui/core/Avatar';
-import MenuIcon from '@material-ui/icons/Menu';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import AddIcon from '@material-ui/icons/Add';
-import SearchIcon from '@material-ui/icons/Search';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import MoneyOffIcon from '@material-ui/icons/MoneyOff';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import PaymentIcon from '@material-ui/icons/Payment';
@@ -40,18 +22,11 @@ const useStyles = makeStyles({
 
 export default function SideBarDrawer(props) {
 
-
-	const toggle = () => {
-		props.toggleDrawer(false);
-	}
-
-
 	const classes = useStyles();
 
 	return (
-
-		<Drawer open={props.opened} onClose={toggle}>
-			<div className={classes.list} role="presentation" onClick={toggle} onKeyDown={toggle}>
+		<Drawer open={props.opened} onClose={props.toggleDrawer(false)}>
+			<div className={classes.list} role="presentation" onClick={props.toggleDrawer(false)} onKeyDown={props.toggleDrawer(false)}>
 				<List>
 					<ListItem button key='Dashboard'>
 						<ListItemIcon> <DashboardIcon /></ListItemIcon><ListItemText primary='Dashboard' />
