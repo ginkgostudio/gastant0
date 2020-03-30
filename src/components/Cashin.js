@@ -34,7 +34,7 @@ export default function Cashin() {
                     </div>
                     <div className="row">
                         <div className="input-field col s6">
-                            <Currency />
+                            <Currency /> 
 
                         </div>
                     </div>

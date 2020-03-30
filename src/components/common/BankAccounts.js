@@ -20,19 +20,13 @@ export default function BankAccounts() {
     const classes = useStyles();
     const [age, setAge] = React.useState('');
 
-    const inputLabel = React.useRef(null);
-    const [labelWidth, setLabelWidth] = React.useState(0);
-    React.useEffect(() => {
-        setLabelWidth(inputLabel.current.offsetWidth);
-    }, []);
-
     const handleChange = event => {
         setAge(event.target.value);
     };
 
     return (
         <div>
-            <FormControl /*className={this.classes.formControl}*/>
+            <FormControl className={classes.formControl}>
                 <InputLabel id="bank-account-label">Bank Account</InputLabel>
                 <Select
                     labelId="bank-account-label"
@@ -47,6 +41,7 @@ export default function BankAccounts() {
                     <MenuItem /*value='COP'*/>Cash</MenuItem>
                 </Select>
             </FormControl>
+            
         </div>
     );
 }
