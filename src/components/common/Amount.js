@@ -16,7 +16,7 @@ export default function Amount() {
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
-      <TextField id="standard-basic" label="New invoice number" />
+      <TextField id="standard-basic" label="Amount" />
     </form>
   );
 }

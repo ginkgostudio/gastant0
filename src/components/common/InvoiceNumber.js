@@ -6,7 +6,7 @@ export default function InvoiceNumber() {
   
 
   return (
-      <TextField id="standard-basic" label="New invoice number" />
+      <TextField id="standard-basic" label="Invoice number" />
   );
 }
 
