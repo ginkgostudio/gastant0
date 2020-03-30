@@ -3,6 +3,7 @@ import './App.css';
 import Expense from './components/Expense';
 import Cashin from './components/Cashin';
 import Dashboard from './components/Dashboard';
+import Invoice from './components/Invoice';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import BottomAppBar from './components/layout/BottomAppBar';
@@ -18,6 +19,7 @@ function App() {
 						<Route exact path="/" component={Dashboard} />
 						<Route path="/expense" component={Expense} />
 						<Route path="/cashin" component={Cashin} />
+						<Route path="/invoice" component={Invoice} />
 					</Switch>
 				</div>
 			</BrowserRouter>

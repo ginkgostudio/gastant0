@@ -16,7 +16,7 @@ export default function Description() {
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
-      <TextField id="standard-basic" label="Description" />
+      <TextField id="standard-basic" label="Description" multiline />
     </form>
   );
 }

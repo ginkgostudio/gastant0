@@ -36,7 +36,8 @@ export default function Currency() {
                     <MenuItem value='ARS'>ARS</MenuItem>
                     <MenuItem value='USD'>USD</MenuItem>
                     <MenuItem value='COP'>COP</MenuItem>
-                    <MenuItem value='YEN'>YEN</MenuItem>
+                    <MenuItem value='EUR'>COP</MenuItem>
+                    
                 </Select>
             </FormControl>
         </div>
