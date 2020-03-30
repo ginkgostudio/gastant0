@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
@@ -18,10 +17,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function BankAccounts() {
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
+    const [bankAccount, setBankAccount] = React.useState('');
 
     const handleChange = event => {
-        setAge(event.target.value);
+        setBankAccount(event.target.value);
     };
 
     return (
@@ -31,17 +30,15 @@ export default function BankAccounts() {
                 <Select
                     labelId="bank-account-label"
                     id="bank-account"
-                    value={age}
+                    value={bankAccount}
                     onChange={handleChange}
                 >
-                    <MenuItem /*value='ARS'*/>Santander Naty</MenuItem>
-                    <MenuItem /*value='ARS'*/>BBVA Naty</MenuItem>
-                    <MenuItem /*value='USD'*/>Santander Leo</MenuItem>
-                    <MenuItem /*value='COP'*/>Payoneer</MenuItem>
-                    <MenuItem /*value='COP'*/>Cash</MenuItem>
+                    <MenuItem value='SRL'>Santander Leo</MenuItem>
+                    <MenuItem value='SRN'>Santander Naty</MenuItem>
+                    <MenuItem value='BCL'>Bancolombia</MenuItem>
+                    <MenuItem value='PYL'>Payoneer</MenuItem>
                 </Select>
             </FormControl>
-            
         </div>
     );
 }

@@ -17,32 +17,26 @@ const useStyles = makeStyles(theme => ({
 
 export default function Currency() {
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
-
-    const inputLabel = React.useRef(null);
-    const [labelWidth, setLabelWidth] = React.useState(0);
-    
-    React.useEffect(() => {
-        setLabelWidth(inputLabel.current.offsetWidth);
-    }, []);
+    const [currency, setCurrency] = React.useState('');
 
     const handleChange = event => {
-        setAge(event.target.value);
+        setCurrency(event.target.value);
     };
 
     return (
         <div>
             <FormControl className={classes.formControl}>
-                <InputLabel id="bank-account-label">Bank Account</InputLabel>
+                <InputLabel id="currency-label">Currency</InputLabel>
                 <Select
-                    labelId="bank-account-label"
-                    id="bank-account"
-                    value={age}
+                    labelId="currency-label"
+                    id="currency"
+                    value={currency}
                     onChange={handleChange}
                 >
                     <MenuItem value='ARS'>ARS</MenuItem>
                     <MenuItem value='USD'>USD</MenuItem>
                     <MenuItem value='COP'>COP</MenuItem>
+                    <MenuItem value='YEN'>YEN</MenuItem>
                 </Select>
             </FormControl>
         </div>
