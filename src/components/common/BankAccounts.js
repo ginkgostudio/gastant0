@@ -15,14 +15,8 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function BankAccounts() {
+export default function BankAccounts(props) {
     const classes = useStyles();
-    const [bankAccount, setBankAccount] = React.useState('');
-
-    const handleChange = event => {
-        setBankAccount(event.target.value);
-    };
-
     return (
         <div>
             <FormControl className={classes.formControl}>
@@ -30,11 +24,12 @@ export default function BankAccounts() {
                 <Select
                     labelId="bank-account-label"
                     id="bank-account"
-                    value={bankAccount}
-                    onChange={handleChange}
+                    value={props.bankAccount}
+                    onChange={(e) => props.handleChange(e.target.value)}
                 >
                     <MenuItem value='SRL'>Santander Leo</MenuItem>
                     <MenuItem value='SRN'>Santander Naty</MenuItem>
+                    <MenuItem value='BVA'>BBVA</MenuItem>
                     <MenuItem value='BCL'>Bancolombia</MenuItem>
                     <MenuItem value='PYL'>Payoneer</MenuItem>
                 </Select>
