@@ -51,7 +51,7 @@ export default function BottomAppBar() {
   const [opened, setOpened] = React.useState(false);
 
   const toggleDrawer = (opened) => (event) => {
-    console.log('bleee');
+
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
@@ -61,12 +61,10 @@ export default function BottomAppBar() {
 
   return (
     <React.Fragment>
-      
-      
       <SideBarDrawer opened={opened} toggleDrawer={toggleDrawer} />
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="open drawer" onClick={toggleDrawer(true)}>
+          <IconButton edge="start" color="inherit" aria-label="open drawer" onClick={() => setOpened(true)}>
             <MenuIcon />
           </IconButton>
           <Fab color="secondary" aria-label="add" className={classes.fabButton}>

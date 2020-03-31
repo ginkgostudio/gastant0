@@ -31,9 +31,7 @@ export default function SideBarDrawer(props) {
 					<ListItem button key='Dashboard'>
 						<ListItemIcon> <DashboardIcon /></ListItemIcon><ListItemText primary='Dashboard' />
 					</ListItem>
-					<ListItem button key='monthly_balance'>
-						<ListItemIcon> <AccountBalanceWalletIcon /></ListItemIcon><ListItemText primary='Monthly balance' />
-					</ListItem>
+				
 				</List>
 				<Divider />
 				<List>
