@@ -25,30 +25,29 @@ export default function SideBarDrawer(props) {
 	const classes = useStyles();
 
 	return (
-		<Drawer open={props.opened} onClose={props.toggleDrawer(false)}>
+		<Drawer open={props.opened} onClose={props.toggleDrawer(false)} anchor='left'>
 			<div className={classes.list} role="presentation" onClick={props.toggleDrawer(false)} onKeyDown={props.toggleDrawer(false)}>
 				<List>
 					<ListItem button key='Dashboard'>
-						<ListItemIcon> <DashboardIcon /></ListItemIcon><ListItemText primary='Dashboard' />
+						<ListItemIcon><DashboardIcon /></ListItemIcon><ListItemText primary='Dashboard' />
 					</ListItem>
-				
 				</List>
 				<Divider />
 				<List>
 					<ListItem button key='all_money_in'>
-						<ListItemIcon> <AttachMoneyIcon /></ListItemIcon><ListItemText primary='All Money IN' />
+						<ListItemIcon><AttachMoneyIcon /></ListItemIcon><ListItemText primary='All Money IN' />
 					</ListItem>
 					<ListItem button key='all_money_out'>
-						<ListItemIcon> <MoneyOffIcon /></ListItemIcon><ListItemText primary='All Money OUT' />
+						<ListItemIcon><MoneyOffIcon /></ListItemIcon><ListItemText primary='All Money OUT' />
 					</ListItem>
 				</List>
 				<Divider />
 				<List>
 					<ListItem button key='new_income'>
-						<ListItemIcon> <DashboardIcon /></ListItemIcon><ListItemText primary='New income' />
+						<ListItemIcon><DashboardIcon /></ListItemIcon><ListItemText primary='New income' />
 					</ListItem>
 					<ListItem button key='new_payment'>
-						<ListItemIcon> <PaymentIcon /></ListItemIcon><ListItemText primary='New payment' />
+						<ListItemIcon><PaymentIcon /></ListItemIcon><ListItemText primary='New payment' />
 					</ListItem>
 				</List>
 			</div>
