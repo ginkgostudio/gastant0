@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import { Link as RouterLink } from 'react-router-dom';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
@@ -10,7 +11,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import MoneyOffIcon from '@material-ui/icons/MoneyOff';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import PaymentIcon from '@material-ui/icons/Payment';
-import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
+import DescriptionIcon from '@material-ui/icons/Description';
 
 
 const useStyles = makeStyles({
@@ -28,7 +29,7 @@ export default function SideBarDrawer(props) {
 		<Drawer open={props.opened} onClose={props.toggleDrawer(false)} anchor='left'>
 			<div className={classes.list} role="presentation" onClick={props.toggleDrawer(false)} onKeyDown={props.toggleDrawer(false)}>
 				<List>
-					<ListItem button key='Dashboard'>
+					<ListItem button key='Dashboard' component={RouterLink} to="/">
 						<ListItemIcon><DashboardIcon /></ListItemIcon><ListItemText primary='Dashboard' />
 					</ListItem>
 				</List>
@@ -43,11 +44,14 @@ export default function SideBarDrawer(props) {
 				</List>
 				<Divider />
 				<List>
-					<ListItem button key='new_income'>
+					<ListItem button key='new_income' component={RouterLink} to="/cashin">
 						<ListItemIcon><DashboardIcon /></ListItemIcon><ListItemText primary='New income' />
 					</ListItem>
-					<ListItem button key='new_payment'>
+					<ListItem button key='new_payment' component={RouterLink} to="/expense">
 						<ListItemIcon><PaymentIcon /></ListItemIcon><ListItemText primary='New payment' />
+					</ListItem>
+					<ListItem button key='new_invoice' component={RouterLink} to="/invoice">
+						<ListItemIcon><DescriptionIcon /></ListItemIcon><ListItemText primary='New invoice' />
 					</ListItem>
 				</List>
 			</div>
