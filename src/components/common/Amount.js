@@ -11,10 +11,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Amount() {
+export default function Amount(props) {
   const classes = useStyles();
 
   return (
-      <TextField id="standard-basic" label="Amount" type="number" />
+      <TextField id="standard-basic" label="Amount" type="number" onChange={(e) => props.handleChange(e.target.value)}/>
   );
 }

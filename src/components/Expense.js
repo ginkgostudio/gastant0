@@ -6,46 +6,55 @@ import Description from './common/Description'
 import Currency from './common/Currency'
 import PaymentMethod from './common/PaymentMethod'
 import Datepicker from './common/Datepicker'
+import axios from 'axios';
 
 
 export default function Expense() {
+
     const [selectedDate, setSelectedDate] = React.useState(Date.now());
-    
-    const handleDateChange = date => {
-        setSelectedDate(date);
-    };
+    const [amount, setAmount] = React.useState('');
+    const [description, setDescription] = React.useState('');
+    const [currency, setCurrency] = React.useState('');
+    const [paymentMethod, setPaymentMethod] = React.useState('CSH');
+
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(selectedDate);
+    } 
+
     return (
         <div className="row">
         <h3>Expense</h3>
-            <form action="" className="col s12">
+            <form onSubmit={handleSubmit} className="col s12">
                 <div className="row">
                     <div className="input-field col s6">
-                    <Amount />
+                    <Amount handleChange={setAmount} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="input-field col s6">
-                        <Description />
+                        <Description handleChange={setDescription}/>
                     </div>
                 </div>
                 <div className="row">
                     <div className="input-field col s6">
-                        <Currency /> 
+                        <Currency handleChange={setCurrency} currency={currency}/> 
                     </div>
                 </div>
                 <div className="row">
                     <div className="input-field col s6">
-                        <PaymentMethod />
+                        <PaymentMethod handleChange={setPaymentMethod} paymentMethod={paymentMethod}/>
                     </div>
                 </div>
                 <div className="row">
                     <div className="input-field col s6">
-                        <Datepicker />
+                        <Datepicker handleChange={setSelectedDate} selectedDate={selectedDate} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col s6">
-                        <Button variant="contained" color="secondary">Submit</Button>
+                        <Button variant="contained" type="submit" color="secondary">Submit</Button>
                     </div>
                 </div>
             </form>

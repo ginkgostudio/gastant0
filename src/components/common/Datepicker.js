@@ -7,12 +7,11 @@ import {
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 
-export default function MaterialUIPicker() {
+export default function Datepicker(props) {
   // The first commit of Material-UI
-  const [selectedDate, setSelectedDate] = React.useState(Date.now());
-
-  const handleDateChange = date => {
-    setSelectedDate(date);
+  
+  const handleDateChange = (date) => {
+    props.handleChange(date);
   };
 
   return (
@@ -23,7 +22,7 @@ export default function MaterialUIPicker() {
           id="date-picker-dialog"
           label="Date picker dialog"
           format="MM/dd/yyyy"
-          value={selectedDate}
+          value={props.selectedDate}
           onChange={handleDateChange}
           KeyboardButtonProps={{
             'aria-label': 'change date',

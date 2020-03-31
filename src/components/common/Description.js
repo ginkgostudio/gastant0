@@ -11,10 +11,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Description() {
+export default function Description(props) {
   const classes = useStyles();
 
   return (
-      <TextField id="standard-basic" label="Description" multiline />
+      <TextField id="standard-basic" label="Description" multiline onChange={(e) => props.handleChange(e.target.value)}/>
   );
 }

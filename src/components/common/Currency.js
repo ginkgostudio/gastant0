@@ -15,13 +15,9 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function Currency() {
+export default function Currency(props) {
     const classes = useStyles();
-    const [currency, setCurrency] = React.useState('');
 
-    const handleChange = event => {
-        setCurrency(event.target.value);
-    };
 
     return (
         <div>
@@ -30,13 +26,13 @@ export default function Currency() {
                 <Select
                     labelId="currency-label"
                     id="currency"
-                    value={currency}
-                    onChange={handleChange}
+                    value={props.currency}
+                    onChange={(e) => props.handleChange(e.target.value)}
                 >
                     <MenuItem value='ARS'>ARS</MenuItem>
                     <MenuItem value='USD'>USD</MenuItem>
                     <MenuItem value='COP'>COP</MenuItem>
-                    <MenuItem value='EUR'>COP</MenuItem>
+                    <MenuItem value='EUR'>EUR</MenuItem>
                     
                 </Select>
             </FormControl>
