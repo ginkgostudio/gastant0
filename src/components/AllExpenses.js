@@ -1,19 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
+import { EXPENSES } from '../graphql/queries';
 
-
-const EXPENSES = gql`
-  {
-    getExpenses{
-        id
-        description
-        date
-        currency
-        amount
-    }
-  }
-`;
 
 
 const AllExpenses = () => {
@@ -24,8 +12,8 @@ const AllExpenses = () => {
 
     return (
         <ul>
-            {data.getExpenses.map((item, index) => (
-                <li key={item.id}>{item.description}</li>
+            {data.getExpenses.map((expense, index) => (
+                <li key={expense.id}>{expense.description}</li>
             ))}
         </ul>
     );

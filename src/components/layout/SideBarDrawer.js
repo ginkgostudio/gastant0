@@ -47,8 +47,8 @@ export default function SideBarDrawer(props) {
 					<ListItem button key='new_income' component={RouterLink} to="/cashin">
 						<ListItemIcon><DashboardIcon /></ListItemIcon><ListItemText primary='New income' />
 					</ListItem>
-					<ListItem button key='new_payment' component={RouterLink} to="/expense">
-						<ListItemIcon><PaymentIcon /></ListItemIcon><ListItemText primary='New payment' />
+					<ListItem button key='new_expense' component={RouterLink} to="/expense">
+						<ListItemIcon><PaymentIcon /></ListItemIcon><ListItemText primary='New Expense' />
 					</ListItem>
 					<ListItem button key='new_invoice' component={RouterLink} to="/invoice">
 						<ListItemIcon><DescriptionIcon /></ListItemIcon><ListItemText primary='New invoice' />
